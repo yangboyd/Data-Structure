@@ -1,6 +1,7 @@
 # 《数据结构》更新介绍
 
-本项目基于https://github.com/kangjianwei/Data-Structure 和 https://github.com/kangjianwei/Data-Structure，鉴于这两者已不更新，集中在这里补充更新
+本项目基于https://github.com/kangjianwei/Data-Structure 和 https://github.com/kangjianwei/Data-Structure
+鉴于这两者已不更新，集中在这里补充更新
 
 严蔚敏《数据结构》（C语言版） 中没有的算法，参考《数据结构(C++语言版)第三版_邓俊辉》来实现的，比如B树的删除。
 
