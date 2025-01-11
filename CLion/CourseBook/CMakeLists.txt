@@ -84,3 +84,8 @@ add_subdirectory(1009_HeapSort)
 add_subdirectory(1010_MergeSort)
 add_subdirectory(1011_RadixSort)
 
+add_subdirectory(1101_LoserTree)
+add_subdirectory(1102_ReplaceSelectSortPrepare)
+add_subdirectory(1103_ReplaceSelectSort)
+
+add_subdirectory(1201_MergeFIle)
