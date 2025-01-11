@@ -1,3 +1,24 @@
+##《数据结构》更新介绍
+
+本项目基于https://github.com/kangjianwei/Data-Structure 和 https://github.com/kangjianwei/Data-Structure
+
+鉴于这两者已不更新，集中在这里补充更新
+
+严蔚敏《数据结构》（C语言版） 中没有的算法，参考《数据结构(C++语言版)第三版_邓俊辉》来实现的，比如B树的删除。
+
+严蔚敏《数据结构》结构与 《Fundamentals of Data Structures》Horowitz E, Sahni S. 1976 类似。
+
+参考书:
+
+《数据结构(C++语言版)第三版_邓俊辉》
+
+《Computer-Organization-and-Design-The-Hardware-Software-Interface-RISC-V-Edition》
+
+## 推更
+
+![推 更](push.JPG)
+
+
 # 《数据结构》课本源码与习题解析
 
 
@@ -10,9 +31,6 @@
 | ![数据结构教材](数据结构教材.png) | ![数据结构题集](数据结构题集.png) |
 
 
-## 推更
-
-![推 更](push.JPG)
 
 ## 项目结构
 
