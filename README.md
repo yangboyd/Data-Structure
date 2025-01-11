@@ -13,7 +13,7 @@
 
 《数据结构(C++语言版)第三版_邓俊辉》
 
-《Computer-Organization-and-Design-The-Hardware-Software-Interface-RISC-V-Edition》
+《Introduction-to-Algorithm-4th》
 
 ## 推更
 
