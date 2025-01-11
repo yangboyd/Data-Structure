@@ -139,9 +139,12 @@ int main(int argc, char* argv[]) {
     printf("████████ InsertChild \n");
     {
         CTree c;
-        TElemType p = 'C';
-        int i = 2;
-        
+        // TElemType p = 'C';
+        // int i = 2;
+
+        TElemType p = 'A';
+        int i = 1;
+
         printf("█ 创建子树 c ...\n");
         InitTree(&c);
         CreateTree(&c, "TestData_c.txt");
@@ -158,9 +161,12 @@ int main(int argc, char* argv[]) {
     
     printf("████████ DeleteChild \n");
     {
-        TElemType p = 'C';
+        // TElemType p = 'C';
+        // int i = 1;
+
+        TElemType p = 'A';
         int i = 1;
-        
+
         printf("█ 删除树 T 中 %c 结点的第 %d 棵子树 ...\n", p, i);
         DeleteChild(&T, p, i);
         printf("█ T = \n");

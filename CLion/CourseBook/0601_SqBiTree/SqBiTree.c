@@ -660,7 +660,7 @@ void PrintTree(SqBiTree T) {
         w        = (int) pow(2, i);             // 二叉树当前层的宽度
         distance = width / w;                   // 二叉树当前层的元素间隔
         begin    = width / (int) pow(2, i + 1); // 二叉树当前层首个元素之前的空格数
-        
+        printf("i:%d, w:%d, distance:%d,begin:%d\n",i,w,distance,begin);
         for(k = 0; k < w; k++) {
             j = begin + k * (1 + distance);
             tmp[i][j] = T[(int) pow(2, i) + k - 1];

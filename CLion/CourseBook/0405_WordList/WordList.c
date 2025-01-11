@@ -23,7 +23,7 @@ void Main(char* bookinfo, char* bookidx) {
         
         // 以“只写”模式打开索引文件
         if((g = fopen(bookidx, "w")) != NULL) {
-            
+
             // 初始化索引表
             InitIdxList(&idxlist);
             
@@ -88,11 +88,23 @@ void GetLine(FILE* f) {
     fgets(gBuf, MaxLineLen, f);
 }
 
+#include <ctype.h> // for tolower
+
+char *my_strlwr(char *str) {
+    if (str == NULL) return NULL;
+    char *p = str;
+    while (*p) {
+        *p = tolower((unsigned char)*p);
+        p++;
+    }
+    return str;
+}
+
 /*
  * 从缓冲区gBuf中提取书名关键词到词表gWdList，书号存入bno。
  */
 void ExtractKeyWord(ElemType* bno) {
-    char delim[] = {'-', ' ', '\r', '\n', '\t'};  // 分隔符
+    char delim[] = {'-', ' ', '\r', '\n', '\t',0};  // 分隔符
     char* title;    // 书名
     char* token;    // 从书名中分解出的关键词
     
@@ -100,13 +112,14 @@ void ExtractKeyWord(ElemType* bno) {
     *bno = (int) strtol(gBuf, &title, 10);
     
     // 将书名的由大写变小写
-    strlwr(title);
-    
+    my_strlwr(title);
+
     // 清空关键词词表
     gWdList.last = 0;
     
     // 分解关键词
     for(token = strtok(title, delim); token != NULL; token = strtok(NULL, delim)) {
+        //printf("token:%s\n", token);
         // 如果该关键词是常用词，则忽略它
         if(isCommonWords(token) == TRUE) {
             continue;
@@ -114,6 +127,7 @@ void ExtractKeyWord(ElemType* bno) {
         
         // 记下从书名中提取的关键词
         gWdList.item[gWdList.last++] = token;
+
     }
 }
 
@@ -135,7 +149,7 @@ Status InsIdxList(IdxListType* idxlist, int bno) {
     for(i = 0; i < gWdList.last; i++) {
         // 获取待插入的关键词
         GetWord(i, &wd);
-        
+
         // 判断该关键词是否已经位于索引表中
         j = Locate(*idxlist, wd, &boo);
         

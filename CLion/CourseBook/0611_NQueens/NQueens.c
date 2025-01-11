@@ -60,74 +60,86 @@ static Status AllowLayout(int i, int j) {
     int len;    // 行、列、斜列上的元素数量
     
     // 在行中轮询
-    for(k = 1, n = j; k <= N - 1; k++) {
-        n = (n + 1) - n / N * N;
+    for(k = 1; k <= N; k++) {
         
-        if(CB[i][n] == 1) {
+        if(k!=i && CB[k][j] == 1) {
             return ERROR;   // 该行中遇到了棋子
         }
     }
     
     
     // 在列中轮询
-    for(k = 1, m = i; k <= N - 1; k++) {
-        m = (m + 1) - m / N * N;
+    for(k = 1; k <= N; k++) {
+        // m = (m + 1) - m / N * N;
         
-        if(CB[m][j] == 1) {
+        if(k!=j && CB[i][k] == 1) {
             return ERROR;   // 该列中遇到了棋子
         }
     }
-    
-    
-    len = N - abs(i - j);
-    
-    // 在右斜列中轮询(从右下到左上)
-    for(k = 1, m = i, n = j; k <= len - 1; k++) {
-        // 棋子(m,n)位于左下部分
-        if(i > j) {
-            m = (m + 1) - (m - abs(i - j)) / len * len;
-            n = (n + 1) - n / len * len;
-            
-            // 棋子(m,n)位于右上部分
-        } else {
-            m = (m + 1) - m / len * len;
-            n = (n + 1) - (n - abs(i - j)) / len * len;
+
+    for(k = 1, m = i, n = j; k <= N; k++)
+    {
+        m = m + 1;
+        n = n + 1;
+        if (m<=N && n<=N)
+        {
+            if(CB[m][n] == 1) {
+                return ERROR;   // 该右斜列中遇到了棋子
+            }
         }
-        
-        if(CB[m][n] == 1) {
-            return ERROR;   // 该右斜列中遇到了棋子
+        else
+        {
+            break;
         }
     }
-    
-    
-    // 棋子(m,n)位于左上部分
-    if(i + j < N + 1) {
-        len = i + j - 1;
-        s = i + j - 1;  // 作为该斜列上y坐标的起点
-        
-        // 棋子(m,n)位于右下部分
-    } else {
-        len = 2 * N + 1 - (i + j);
-        s = i + j - N;  // 作为该斜列上x坐标的起点
-    }
-    
-    // 在左斜列中轮询(从左下到右上)
-    for(k = 1, m = i, n = j; k <= len - 1; k++) {
-        // 棋子(m,n)位于左上部分
-        if(i + j < N + 1) {
-            m = (m + 1) - m / len * len;
-            n = s - (s - (n - 1)) % len;
-            // 棋子(m,n)位于右下部分
-        } else {
-            m = (m + 1) - ((m + 1) - s) / len * len;
-            n = N - (N - (n - 1)) % len;
+    for(k = 1, m = i, n = j; k <= N; k++)
+    {
+        m = m - 1;
+        n = n - 1;
+        if (m>0 && n>0)
+        {
+            if(CB[m][n] == 1) {
+                return ERROR;   // 该右斜列中遇到了棋子
+            }
         }
-        
-        if(CB[m][n] == 1) {
-            return ERROR;   // 该左斜列中遇到了棋子
+        else
+        {
+            break;
         }
     }
-    
+
+    for(k = 1, m = i, n = j; k <= N; k++)
+    {
+        m = m + 1;
+        n = n - 1;
+        if (m<=N && n>0)
+        {
+            if(CB[m][n] == 1) {
+                return ERROR;   // 该右斜列中遇到了棋子
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    for(k = 1, m = i, n = j; k <= N; k++)
+    {
+        m = m - 1;
+        n = n + 1;
+        if (m>0 && n<=N)
+        {
+            if(CB[m][n] == 1) {
+                return ERROR;   // 该右斜列中遇到了棋子
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+
     return OK;
 }
 

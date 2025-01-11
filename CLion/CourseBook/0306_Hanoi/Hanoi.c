@@ -111,7 +111,7 @@ void PrintGraph(char t1, int n, char t2) {
     
     s = (char**) malloc((N + 2) * sizeof(char*));
     for(i = 0; i < N + 2; i++) {
-        s[i] = (char*) malloc(N * sizeof(char));
+        s[i] = (char*) malloc((N+1) * sizeof(char));
         
         for(j = 0; j < i; j++) {
             if(i == N + 1) {

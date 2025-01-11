@@ -4,6 +4,10 @@
 
 #include "CTree.h"
 
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 /*
  * 初始化
  *
@@ -100,6 +104,17 @@ Status CreateTree(CTree* T, char* path) {
         if(fp == NULL) {
             return ERROR;
         }
+
+        //On macOS, get file path
+        char path[512];
+        int fd = fileno(fp);
+        int ret = fcntl(fd, F_GETPATH, path);
+        if (ret == -1) {
+            perror("fcntl");
+        } else {
+            printf("File path: %s\n", path);
+        }
+
         Create(T, fp);
         fclose(fp);
     }
@@ -456,12 +471,68 @@ Status InsertChild(CTree* T, TElemType p, int i, CTree c) {
     for(k = c.r; k != (c.r + c.n) % MAX_TREE_SIZE; k = (k + 1) % MAX_TREE_SIZE) {
         pc[k].row += level - 1;
     }
-    
+
+    int level_pre=-1;
+    int level_mid=-1;
+    int level_post=-1;
     // tCur指向第level行的第一个结点
+    //tCur指向要插入地方的后续结点
     for(tCur = pIndex; tCur != (T->r + T->n) % MAX_TREE_SIZE; tCur = (tCur + 1) % MAX_TREE_SIZE) {
         if(pt[tCur].row == level) {
+            // if (-1==level_pre)
+            // {
+            //     level_pre = tCur;
+            // }
+            if (T->nodes[tCur].parent<pIndex)
+            {
+                level_pre = tCur;
+            }
+            if (T->nodes[tCur].parent==pIndex)
+            {
+                level_mid = tCur+i-1;
+                break;
+            }
+            if (T->nodes[tCur].parent>pIndex)
+            {
+                level_post=tCur;
+                break;
+            }
+        }
+        if(pt[tCur].row > level)
+        {
             break;
         }
+    }
+
+    m=0;
+    //p有child
+    if (level_mid>-1)
+    {
+        tCur = level_mid;
+        m = pt[level_mid].col-1;
+    }
+    else if (level_post>-1)
+    {
+        tCur = level_post;
+        m = pt[level_post].col-1;
+    }
+    else if (level_pre>-1)
+    {
+        m = pt[level_pre].col;
+        tCur = (level_pre + 1) % MAX_TREE_SIZE;
+    }
+    else
+    {
+        m=0;
+    }
+
+    if (m>0)
+    {
+        bound=(tCur-1)% MAX_TREE_SIZE;
+    }
+    else
+    {
+        bound = -1;
     }
     
     // cCur指向树c中的根结点，该根结点也应当插入到树T中的level行
@@ -472,7 +543,7 @@ Status InsertChild(CTree* T, TElemType p, int i, CTree c) {
         if(bound != -1) {
             tCur = (bound + 1) % MAX_TREE_SIZE;
         }
-        
+
         if(bound == -1) {
             m = 0;
         } else {
@@ -502,12 +573,12 @@ Status InsertChild(CTree* T, TElemType p, int i, CTree c) {
         // 计算下一层的边界
         if(bound != -1) {
             // 从bound起，向左查找
-            for(k = bound; pt[k].lastChild == -1 && pt[k].childIndex != 1; k = (k - 1) % MAX_TREE_SIZE) {
+            for(k = bound; pt[k].lastChild == -1 && pt[k].row == level; k = (k - 1) % MAX_TREE_SIZE) {
                 // 查找右边界的父结点的索引
             }
-            
+
             // 已经遍历到该层第一个结点，但该结点仍然没有孩子
-            if(pt[k].lastChild == -1) {
+            if(pt[k].row != level || pt[k].lastChild == -1) {
                 bound = -1;
             } else {
                 bound = pt[k].lastChild;    // k结点最后一个孩子的索引
@@ -611,6 +682,13 @@ Status InsertChild(CTree* T, TElemType p, int i, CTree c) {
                     
                     s->next = cp->next;
                     cp->next = s;
+                }
+                ChildPtr cq=s->next;
+                //merge head, cause post child index added   in T, add  childIndex by 1
+                while (NULL != cq)
+                {
+                    pt[cq->child].childIndex++;
+                    cq = cq->next;
                 }
             }
             

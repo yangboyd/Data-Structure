@@ -285,7 +285,7 @@ void SubtractPolyn(Polynomial* Pa, Polynomial* Pb) {
     // 若Pb还未扫描完，将剩余项的系数取反后链接到Pa后
     if(qb != NULL) {
         // 改变剩余项的符号
-        for(r = qb = 0; r != NULL; r = r->next) {
+        for(r = qb; r != NULL; r = r->next) {
             r->data.coef = -r->data.coef;
         }
         

@@ -134,19 +134,23 @@ void ShortestPath_DIJ(MGraph G, int v0, PathMatrix_DIJ P, ShortPathTable_DIJ D) 
             // 如果是图，只走此分支
             if(G.kind == DG || G.kind == UDG) {
                 // 更新顶点集S到顶点集V-S的最近距离
-                if(!final[w] && G.arcs[v][w].adj != 0 && D[w] == 0) {
-                    // 更新距离：由于顶点v0->w经由v后会获得更短的距离，故此处需要记下该距离
-                    D[w] = D[v] + 1;    // 图中相邻顶点步长为1
-                    
-                    /* 更新路径：P[w] = P[v] + [w] */
-                    
-                    // 先将v0->w的路径更新为v0->j的路径
-                    for(j = 0; j < G.vexnum; j++) {
-                        P[w][j] = P[v][j];
+                if(!final[w] && G.arcs[v][w].adj != 0 ) {//&& D[w] == 0
+                    if (D[w] == 0 || ((D[v] + 1)<D[w]))//之前没有路，或者经过v的路更短，则经过V
+                    {
+                        // 更新距离：由于顶点v0->w经由v后会获得更短的距离，故此处需要记下该距离
+                        D[w] = D[v] + 1;    // 图中相邻顶点步长为1
+
+                        /* 更新路径：P[w] = P[v] + [w] */
+
+                        // 先将v0->w的路径更新为v0->j的路径
+                        for(j = 0; j < G.vexnum; j++) {
+                            P[w][j] = P[v][j];
+                        }
+
+                        // 再将w添加到v0->w的路径中
+                        P[w][w] = TRUE;
                     }
-                    
-                    // 再将w添加到v0->w的路径中
-                    P[w][w] = TRUE;
+
                 }
             }
         }
