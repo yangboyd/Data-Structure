@@ -15,9 +15,6 @@
 
 《Introduction-to-Algorithm-4th》
 
-## 推更
-
-![推 更](push.JPG)
 
 
 
