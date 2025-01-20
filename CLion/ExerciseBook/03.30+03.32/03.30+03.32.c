@@ -29,8 +29,8 @@ Status DeQueue_3_30(SqQueue* Q, QElemType* e);
 /*
  * 求k阶斐波那契数列满足特定条件的前n+1项
  */
-Status Algo_3_32(int k, SqList* fib);
-
+Status Algo_3_321(int k, SqList* fib);
+Status Algo_3_32(int k, SqQueue* Q);
 
 // 输出队列元素
 void Output(SqQueue Q) {
@@ -81,11 +81,20 @@ int main(int argc, char* argv[]) {
     printf("████████ 题 3.32 验证...\n");
     {
         SqList fib;
-        
-        Algo_3_32(MAXQSIZE, &fib);
+
+        Algo_3_321(MAXQSIZE, &fib);
         printf("█ %d 阶斐波那契数列的前 %d 项为：\n", MAXQSIZE, fib.length);
         for(i = 0; i < fib.length; i++) {
             printf("%d ", fib.elem[i]);
+        }
+        printf("\n");
+
+        SqQueue Q;
+        Algo_3_32(MAXQSIZE, &Q);
+        printf("█ %d 阶斐波那契数列的前 %d 项为：\n", MAXQSIZE, Q.length);
+        int head = (Q.rear - Q.length + MAXQSIZE) % MAXQSIZE;
+        for(i = 0; i < Q.length; i++) {
+            printf("%d ", Q.base[(head+i)% MAXQSIZE]);
         }
         printf("\n");
     }
@@ -155,37 +164,142 @@ Status DeQueue_3_30(SqQueue* Q, QElemType* e) {
 }
 
 /*
- * 求k阶斐波那契数列满足特定条件的前n+1项
+ * 求k阶斐波那契数列满足特定条件的前n+1项，只保留后k项
  *
  *【注】
- * 个人感觉这个题出的有些牵强。
- * 因为既然要求计算前n+1项，但队列只保留后k项，这说明那个前n+1项必定需要保存到别的地方。
- * 可是，既然保存了前n+1项，就没必要用到循环队列中的后k项了，多余...
- * 如果本题改为计算满足条件的【第】n+1项的值，那么循环队列是有应用价值的
+ * 只用循环队列实现。
+ *
  */
-Status Algo_3_32(int k, SqList* fib) {
+Status Algo_3_322(int k, SqQueue* Q) {
     int flag;
     int i, j, sum;
-    SqQueue Q;
+    // SqQueue Q;
     ElemType e;
     
     if(k < 2 || MAX < 0) {
         return ERROR;
     }
     
+    InitQueue_3_30(Q);
+    // InitList(fib);
+    
+    // 前k-1项为0
+    for(i = 1; i <= k - 1; i++) {
+        EnQueue_3_30(Q, 0);
+        // ListInsert(fib, i, 0);
+    }
+    
+    // 第k项为1
+    EnQueue_3_30(Q, 1);
+    // ListInsert(fib, i, 1);
+
+    while(Q->base[(Q->rear-1)% MAXQSIZE]<=MAX){
+        /*
+         * 计算循环队列中现有元素的和
+         * 其实这一步可以改为计算顺序表中后k项的和，这样一来就没循环队列啥事了
+         */
+        int head = ((*Q).rear - (*Q).length + MAXQSIZE) % MAXQSIZE;
+        for(j = 0, sum = 0; j < Q->length; j++) {
+            sum += Q->base[(head+j)% MAXQSIZE];
+        }
+
+        // 此处的e只是用作临时变量
+        DeQueue_3_30(Q, &e);
+        
+        // 将新计算出的元素入队
+        EnQueue_3_30(Q, sum);
+
+        // 顺便往顺序表中缓存一份
+        // ListInsert(fib, ++i, sum);
+    }
+    
+    return OK;
+}
+
+/*
+ * 求k阶斐波那契数列满足特定条件的前n+1项，只保留后k项
+ *
+ *【注】
+ * 只用循环队列实现。
+ *
+ */
+Status Algo_3_32(int k, SqQueue* Q) {
+    int flag;
+    int i, j, sum;
+    // SqQueue Q;
+    ElemType e;
+
+    if(k < 2 || MAX < 0) {
+        return ERROR;
+    }
+
+    InitQueue_3_30(Q);
+    // InitList(fib);
+
+    // 前k-1项为0
+    for(i = 1; i <= k - 1; i++) {
+        EnQueue_3_30(Q, 0);
+        // ListInsert(fib, i, 0);
+    }
+
+    // 第k项为1
+    EnQueue_3_30(Q, 1);
+    // ListInsert(fib, i, 1);
+
+    sum=1;
+    while(sum<=MAX){
+        /*
+         * 计算循环队列中现有元素的和
+         * 其实这一步可以改为计算顺序表中后k项的和，这样一来就没循环队列啥事了
+         */
+        // int head = ((*Q).rear - (*Q).length + MAXQSIZE) % MAXQSIZE;
+        // for(j = 0, sum = 0; j < Q->length; j++) {
+        //     sum += Q->base[(head+j)% MAXQSIZE];
+        // }
+
+        // 此处的e只是用作临时变量
+        DeQueue_3_30(Q, &e);
+
+        // 将新计算出的元素入队
+        EnQueue_3_30(Q, sum);
+
+        sum=sum-e+sum;
+        // 顺便往顺序表中缓存一份
+        // ListInsert(fib, ++i, sum);
+    }
+
+    // 此处的e只是用作临时变量
+    DeQueue_3_30(Q, &e);
+
+    // 将新计算出的元素入队
+    EnQueue_3_30(Q, sum);
+    
+    return OK;
+}
+
+Status Algo_3_321(int k, SqList* fib) {
+    int flag;
+    int i, j, sum;
+    SqQueue Q;
+    ElemType e;
+
+    if(k < 2 || MAX < 0) {
+        return ERROR;
+    }
+
     InitQueue_3_30(&Q);
     InitList(fib);
-    
+
     // 前k-1项为0
     for(i = 1; i <= k - 1; i++) {
         EnQueue_3_30(&Q, 0);
         ListInsert(fib, i, 0);
     }
-    
+
     // 第k项为1
     EnQueue_3_30(&Q, 1);
     ListInsert(fib, i, 1);
-    
+
     while((flag = GetElem(*fib, i, &e))==OK && e<=MAX){
         /*
          * 计算循环队列中现有元素的和
@@ -194,16 +308,16 @@ Status Algo_3_32(int k, SqList* fib) {
         for(j = 0, sum = 0; j < Q.length; j++) {
             sum += Q.base[j];
         }
-        
+
         // 此处的e只是用作临时变量
         DeQueue_3_30(&Q, &e);
-        
+
         // 将新计算出的元素入队
         EnQueue_3_30(&Q, sum);
-        
+
         // 顺便往顺序表中缓存一份
         ListInsert(fib, ++i, sum);
     }
-    
+
     return flag;
 }

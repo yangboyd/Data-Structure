@@ -76,11 +76,13 @@ int Algo_3_27_2(int m, int n) {
     stack[top].nval = n;
     
     while(1) {
+        printf("%d:(%d, %d)\n",top, stack[top].mval, stack[top].nval);
         // m==0
         while(top>0 && stack[top].mval == 0) {
             top--;
             stack[top].mval = stack[top].mval - 1;
             stack[top].nval = stack[top + 1].nval + 1;
+            printf("%d:(%d, %d)\n",top, stack[top].mval, stack[top].nval);
         }
     
         if(top==0 && stack[0].mval == 0) {
@@ -92,12 +94,14 @@ int Algo_3_27_2(int m, int n) {
             top++;
             stack[top].mval = stack[top - 1].mval;
             stack[top].nval = stack[top - 1].nval - 1;
+            printf("%d:(%d, %d)\n",top, stack[top].mval, stack[top].nval);
         }
     
         // m!=0 n==0
         if(stack[top].nval == 0) {
             stack[top].mval = stack[top].mval - 1;
             stack[top].nval = 1;
+            printf("%d:(%d, %d)\n",top, stack[top].mval, stack[top].nval);
         }
     }
     

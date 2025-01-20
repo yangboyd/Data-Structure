@@ -27,7 +27,9 @@ int Algo_3_24(int m, int n) {
     if(m < 0 || n < 0) {
         exit(ERROR);
     }
-    
+
+    printf("g(%d,%d) = %d\n", m, n, Algo_3_24(m, n));
+
     if(m == 0) {
         return 0;
     } else {

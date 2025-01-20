@@ -124,7 +124,7 @@ Status Dispatch(char* En, char* seq, char Ex[]) {
     }
     
     // 如果调度序列为空，但是入口处存在未调度的车厢，或者中转栈里存在未处理的车厢，则表示发生错误
-    if(seq[k] == '\0' && (En[i] || StackEmpty(S))) {
+    if(seq[k] == '\0' && (En[i] || !StackEmpty(S))) {
         return ERROR;
     }
     

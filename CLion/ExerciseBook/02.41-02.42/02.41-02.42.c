@@ -41,11 +41,11 @@ void OutputPoly(LinkedPoly P);
 
 int main(int argc, char* argv[]) {
     LinkedPoly P1, P2;
-    PolyTerm a[7] = {{-2, 1}, {4, 2}, {2, 3}, {11, 5}, {-7, 6}, {8, 9}, {-3, 10}};
+    PolyTerm a[8] = {{3,0},{-2, 1}, {4, 2}, {2, 3}, {11, 5}, {-7, 6}, {8, 9}, {-3, 10}};
     
     // 准备测试数据
-    CreatPoly(&P1, a, 7);
-    CreatPoly(&P2, a, 7);
+    CreatPoly(&P1, a, 8);
+    CreatPoly(&P2, a, 8);
     printf("Pn(x) = ");
     OutputPoly(P1);
     printf("\n");
