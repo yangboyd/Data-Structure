@@ -273,7 +273,7 @@ Status Algo_3_32(int k, SqQueue* Q) {
 
     // 将新计算出的元素入队
     EnQueue_3_30(Q, sum);
-    
+
     return OK;
 }
 
