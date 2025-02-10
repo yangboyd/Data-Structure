@@ -16,6 +16,8 @@ int main(int argc, char* argv[]) {
     CreateGList(&L, S);
     printf("L = ");
     PrintGList(L);
+
+    printf("L Length = %d\n", GListLength(L));
     
     printf("广义表深度为： %d\n", Algo_5_30_2(L));
     

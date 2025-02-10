@@ -6,7 +6,7 @@
 /*
  * 求符合题意的整数值
  */
-int Algo_6_35(char* BiTree, int i);
+int Algo_6_35(char* BiTree, int i, int ret, int base);
 
 
 int main(int argc, char* argv[]) {
@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     scanf("%d", &i);
     printf("\n");
     
-    j = Algo_6_35(BiTree, i);
+    j = Algo_6_35(BiTree, i,0,1);
     
     if(j != -1) {
         printf("结点 %d 对应的十进制整数为 %d 。\n", i, j);
@@ -36,10 +36,29 @@ int main(int argc, char* argv[]) {
 /*
  * 求符合题意的整数值
  */
-int Algo_6_35(char* BiTree, int i) {
+int Algo_6_35(char* BiTree, int i, int ret, int base) {
     if(BiTree[i] == '\0') {
         return -1;  // 此处不存在结点
     }
-    
-    return i + 1;
+
+    int nret=ret;
+    if(0==(i%2))
+    {
+        nret=base+ret;
+    }
+    else
+    {
+        nret=ret;
+    }
+
+    if(0==i)
+    {
+        return nret;
+    }
+    else
+    {
+        int j=(i-1)/2;
+        int nbase=base*2;
+        return Algo_6_35(BiTree, j, nret, nbase);
+    }
 }
