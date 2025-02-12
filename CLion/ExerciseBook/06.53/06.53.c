@@ -60,8 +60,8 @@ int Algo_6_53(BiTree T, BiTree path[]) {
         }
         
         // 向左走向尽头，判断其路径长度是否符合题意
-        if(i + 1 == depth) {
-            return depth;
+        if(i + 2 == depth) {
+            return depth-1;
         }
         
         // 回到父结点
