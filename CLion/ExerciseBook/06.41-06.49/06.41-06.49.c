@@ -356,7 +356,7 @@ void Algo_6_47(BiTree T) {
 /*
  * 求两结点的共同祖先
  */
-BiTree Algo_6_48(BiTree T, TElemType a, TElemType b) {
+BiTree Algo_6_48_old(BiTree T, TElemType a, TElemType b) {
     BiTree pa[MAX_TREE_DEPTH] = {NULL};
     BiTree pb[MAX_TREE_DEPTH] = {NULL};
     int lenA, lenB;
@@ -376,6 +376,38 @@ BiTree Algo_6_48(BiTree T, TElemType a, TElemType b) {
     return NULL;
 }
 
+BiTree Algo_6_48(BiTree T, TElemType a, TElemType b) {
+    BiTree pa[MAX_TREE_DEPTH] = {NULL};
+    BiTree pb[MAX_TREE_DEPTH] = {NULL};
+    int lenA, lenB;
+    int i;
+
+    // 借助于路径寻找函数
+    if((lenA = FindPath(T, a, pa)) != 0 && (lenB = FindPath(T, b, pb)) != 0) {
+        for(i=0;i<lenA && i<lenB;i++)
+        {
+            if(pa[i]->data != pb[i]->data)
+            {
+                if(i>0)
+                {
+                    return pa[i-1];
+                }
+                else
+                {
+                    return NULL;
+                }
+            }
+        }
+
+        if(i==lenA && i==lenB)
+        {
+            return pa[i-1];
+        }
+
+    }
+
+    return NULL;
+}
 /*
  * 判断二叉树是否为完全二叉树
  *
