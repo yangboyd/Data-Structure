@@ -179,7 +179,7 @@ void ShortestPath_DIJ(ALGraph G, int v0, PathMatrix_DIJ P, ShortPathTable_DIJ D)
             // 如果是图，只走此分支
             if(G.kind == DG || G.kind == UDG) {
                 // 更新顶点集S到顶点集V-S的最近距离
-                if(!final[w] && adjs[v][w] != 0 && D[w] == 0) {
+                if(!final[w] && adjs[v][w] != 0 && (D[w] == 0)) {
                     // 更新距离：由于顶点v0->w经由v后会获得更短的距离，故此处需要记下该距离
                     D[w] = D[v] + 1;    // 图中相邻顶点步长为1
                     

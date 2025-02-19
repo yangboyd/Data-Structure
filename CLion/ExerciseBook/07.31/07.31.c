@@ -42,6 +42,6 @@ void Algo_7_31(OLGraph G) {
     printf("Tarjan算法：\n");
     Tarjan(G);
     
-//    printf("Kosaraju算法：\n");
-//    Kosaraju(G);
+    printf("Kosaraju算法：\n");
+    Kosaraju(G);
 }

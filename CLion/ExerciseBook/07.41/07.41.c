@@ -79,7 +79,7 @@ void Algo_7_41(ALGraph G) {
     
     FindPath_7_41(G, begin, 0, &S, path);
     
-    printf("已找到的权值和最大的路径(关键路径)为：");
+    printf("已找到的权值和最大的路径(关键路径，长度:%d)为：",MAX);
     for(i = 1; i <= path[0]; i++) {
         printf("%c ", G.vertices[path[i]].data);
     }
