@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/CourseBook/0901_SequentialSearch/ALGO9-1.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/0901_SequentialSearch/BO9-1.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/0901_SequentialSearch/C9-1.H" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/0901_SequentialSearch/C9.H" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/0901_SequentialSearch/c1.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/0901_SequentialSearch/c92.h" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/CourseBook/0902_BinSearch/C6-2.H" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1002_TableSort/C10-2.H" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1003_ShellSort/algo10-3.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1004_BubbleSort/algo10-4.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1005_QuickSort/algo10-5.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1005_QuickSort/bo10-2.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1007_SelectSort/algo10-7.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1008_TreeSort/algo10-8.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1009_HeapSort/algo10-9.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1010_MergeSort/alg10-10.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1011_RadixSort/C10-3.H" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1011_RadixSort/alg10-11.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1101_LoserTree/algo11-1.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1101_LoserTree/bo11-1.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1102_ReplaceSelectSort/algo11-2.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CourseBook/1201_MergeFIle/algo12-1.c" charset="UTF-8" />
+  </component>
+</project>
