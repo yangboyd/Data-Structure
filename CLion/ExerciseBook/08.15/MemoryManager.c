@@ -60,6 +60,7 @@ WORD* AllocMemory(Space* space, int n) {
             q->next = p + n;
             q->next->tag = 0;
             q->next->cellsize = p->cellsize - n;
+            q->next->next = p->next;
         }
         
         p->cellsize = n;
