@@ -24,17 +24,23 @@
       <config projectName="CLion" targetName="BubbleSort" />
       <config projectName="CLion" targetName="02.19-02.20" />
       <config projectName="CLion" targetName="06.75-06.76" />
+      <config projectName="CLion" targetName="09.44" />
+      <config projectName="CLion" targetName="09.45" />
       <config projectName="CLion" targetName="BuddySystem" />
+      <config projectName="CLion" targetName="09.40" />
+      <config projectName="CLion" targetName="09.41" />
       <config projectName="CLion" targetName="04.31" />
       <config projectName="CLion" targetName="SearchBST" />
       <config projectName="CLion" targetName="Maze" />
       <config projectName="CLion" targetName="04.30" />
       <config projectName="CLion" targetName="HeapSort" />
       <config projectName="CLion" targetName="LoserTree" />
+      <config projectName="CLion" targetName="09.26-9.27" />
       <config projectName="CLion" targetName="04.27" />
       <config projectName="CLion" targetName="Scanf_lib" />
       <config projectName="CLion" targetName="StronglyConnectedComponents" />
       <config projectName="CLion" targetName="TSMatrix" />
+      <config projectName="CLion" targetName="09.30" />
       <config projectName="CLion" targetName="04.20" />
       <config projectName="CLion" targetName="BankQueuing" />
       <config projectName="CLion" targetName="04.22" />
@@ -55,10 +61,13 @@
       <config projectName="CLion" targetName="RadixSort" />
       <config projectName="CLion" targetName="06.37-06.38" />
       <config projectName="CLion" targetName="SequentialSearch" />
+      <config projectName="CLion" targetName="09.28" />
+      <config projectName="CLion" targetName="09.29" />
       <config projectName="CLion" targetName="04.11" />
       <config projectName="CLion" targetName="04.10" />
       <config projectName="CLion" targetName="04.13" />
       <config projectName="CLion" targetName="04.12" />
+      <config projectName="CLion" targetName="09.25" />
       <config projectName="CLion" targetName="04.14" />
       <config projectName="CLion" targetName="MinimumSpanningTree" />
       <config projectName="CLion" targetName="BalancedBTree" />
@@ -111,6 +120,7 @@
       <config projectName="CLion" targetName="04.15-04.17" />
       <config projectName="CLion" targetName="NQueens" />
       <config projectName="CLion" targetName="TableSort" />
+      <config projectName="CLion" targetName="09.31-09.34" />
       <config projectName="CLion" targetName="05.30.2" />
       <config projectName="CLion" targetName="HuffmanTree" />
       <config projectName="CLion" targetName="05.30.1" />
@@ -140,6 +150,7 @@
       <config projectName="CLion" targetName="02.13" />
       <config projectName="CLion" targetName="07.26" />
       <config projectName="CLion" targetName="BoundaryTagMethod" />
+      <config projectName="CLion" targetName="09.35-09.37" />
       <config projectName="CLion" targetName="Hanoi" />
       <config projectName="CLion" targetName="ShellSort" />
       <config projectName="CLion" targetName="06.40" />
@@ -206,6 +217,7 @@
       <config projectName="CLion" targetName="06.72" />
       <config projectName="CLion" targetName="07.41" />
       <config projectName="CLion" targetName="07.40" />
+      <config projectName="CLion" targetName="09.38-09.39" />
       <config projectName="CLion" targetName="08.15" />
       <config projectName="CLion" targetName="08.14" />
       <config projectName="CLion" targetName="HashTable" />
@@ -221,6 +233,7 @@
       <config projectName="CLion" targetName="08.16" />
       <config projectName="CLion" targetName="02.25" />
       <config projectName="CLion" targetName="02.26" />
+      <config projectName="CLion" targetName="09.42-09.43" />
       <config projectName="CLion" targetName="02.27" />
       <config projectName="CLion" targetName="02.28" />
       <config projectName="CLion" targetName="02.29" />
@@ -259,7 +272,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454f841a-2955-409f-bf0c-49793c85678b" name="Changes" comment="" />
+    <list default="true" id="454f841a-2955-409f-bf0c-49793c85678b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseBook/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseBook/CMakeLists.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -999,6 +1016,19 @@
     "CMake Application.08.14.executor": "Run",
     "CMake Application.08.15.executor": "Run",
     "CMake Application.08.16.executor": "Run",
+    "CMake Application.09.25.executor": "Run",
+    "CMake Application.09.26-9.27.executor": "Run",
+    "CMake Application.09.28.executor": "Debug",
+    "CMake Application.09.29.executor": "Run",
+    "CMake Application.09.30.executor": "Run",
+    "CMake Application.09.31-09.34.executor": "Run",
+    "CMake Application.09.35-09.37.executor": "Run",
+    "CMake Application.09.38-09.39.executor": "Run",
+    "CMake Application.09.40.executor": "Run",
+    "CMake Application.09.41.executor": "Run",
+    "CMake Application.09.42-09.43.executor": "Run",
+    "CMake Application.09.44.executor": "Run",
+    "CMake Application.09.45.executor": "Run",
     "CMake Application.ALGraph.executor": "Run",
     "CMake Application.AMLGraph.executor": "Run",
     "CMake Application.Array.executor": "Run",
@@ -1099,7 +1129,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="CMake Application.08.16">
+  <component name="RunManager" selected="CMake Application.09.46">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="01.16" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="01.16" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="01.16">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -2590,6 +2625,76 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="09.25" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.25" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.25">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.26-9.27" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.26-9.27" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.26-9.27">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.28" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.28" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.28">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.29" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.29" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.29">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.30" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.30" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.30">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.31-09.34" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.31-09.34" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.31-09.34">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.35-09.37" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.35-09.37" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.35-09.37">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.38-09.39" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.38-09.39" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.38-09.39">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.40" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.40" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.40">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.41" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.41" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.41">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.42-09.43" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.42-09.43" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.42-09.43">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.44" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.44" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.44">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.45" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.45" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.45">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="09.46" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="09.46" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="09.46">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ALGraph" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="ALGraph" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="ALGraph">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -3406,11 +3511,6 @@
       </method>
     </configuration>
     <configuration name="WordList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLion" TARGET_NAME="WordList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLion" RUN_TARGET_NAME="WordList">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -3565,6 +3665,20 @@
       <item itemvalue="CMake Application.08.14" />
       <item itemvalue="CMake Application.08.15" />
       <item itemvalue="CMake Application.08.16" />
+      <item itemvalue="CMake Application.09.25" />
+      <item itemvalue="CMake Application.09.26-9.27" />
+      <item itemvalue="CMake Application.09.28" />
+      <item itemvalue="CMake Application.09.29" />
+      <item itemvalue="CMake Application.09.30" />
+      <item itemvalue="CMake Application.09.31-09.34" />
+      <item itemvalue="CMake Application.09.35-09.37" />
+      <item itemvalue="CMake Application.09.38-09.39" />
+      <item itemvalue="CMake Application.09.40" />
+      <item itemvalue="CMake Application.09.41" />
+      <item itemvalue="CMake Application.09.42-09.43" />
+      <item itemvalue="CMake Application.09.44" />
+      <item itemvalue="CMake Application.09.45" />
+      <item itemvalue="CMake Application.09.46" />
       <item itemvalue="CMake Application.ALGraph" />
       <item itemvalue="CMake Application.AMLGraph" />
       <item itemvalue="CMake Application.Array" />
@@ -3667,7 +3781,10 @@
       <workItem from="1738736659142" duration="44000" />
       <workItem from="1738736713750" duration="106000" />
       <workItem from="1738739095715" duration="10997000" />
-      <workItem from="1739161354851" duration="76617000" />
+      <workItem from="1739161354851" duration="78852000" />
+      <workItem from="1740014038713" duration="332000" />
+      <workItem from="1740030963680" duration="3000" />
+      <workItem from="1740031794577" duration="18662000" />
     </task>
     <servers />
   </component>
