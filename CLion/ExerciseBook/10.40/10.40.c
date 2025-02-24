@@ -3,14 +3,18 @@
 
 
 /* 宏定义 */
-#define SIZE 300				//序列关键字个数上限 
+#define SIZE 300				//序列关键字个数上限
+#define MSIZE 10
 
 /* 函数原型 */
 void Algo_10_40(int a[], int len1, int len2);
+void Algo_10_41(int a[], int len1, int len2);
 void Algo_5_18(int a[], int n, int k);					//将数组a[n]中的元素循环右移k个位置
 Status Reversal_5_18(int a[], int n, int start, int end);//逆置数组a[n]中第start个与第end个之间的元素
 void CreatArray_10_40(FILE *fp, int a[], int *len1, int *len2);
 void Print_10_40(int a[], int size);
+
+int * g_start=NULL;
 
 int main(int argc, char *argv[])
 {
@@ -27,10 +31,42 @@ int main(int argc, char *argv[])
 	printf("序列后半段：\n");
 	Print_10_40(&a[len1], len2);
 	printf("归并后的序列：\n");
-	Algo_10_40(a, len1, len2);	
+    g_start=a;
+	Algo_10_41(a, len1, len2);
 	Print_10_40(a, a[0]);
 
 	return 0;
+}
+
+void Algo_10_41(int a[], int len1, int len2)
+{
+    printf("Algo_10_41: start:%d len1:%d len2:%d\n",a-g_start+1,len1,len2);
+    if(len1<=MSIZE||len2<=MSIZE)
+    {
+        return Algo_10_40(a, len1, len2);
+    }
+
+    int b[len1+len2];
+    for(int i=MSIZE+1;i<=len1+len2-MSIZE;i++)
+    {
+        b[i]=a[i];
+    }
+    for(i=1;i<=len2-MSIZE;i++)
+    {
+        a[MSIZE+i]=b[len1+i];
+    }
+    for(i=1;i<len1-MSIZE;i++)
+    {
+        a[MSIZE+len2-MSIZE+i]=b[MSIZE+i];
+    }
+
+
+    Algo_10_40(a,MSIZE, len2-MSIZE);
+
+
+    Algo_10_40(&a[len2],len1-MSIZE, MSIZE);
+
+    Algo_10_41(&a[MSIZE],len2-MSIZE, len1-MSIZE);
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -38,26 +74,35 @@ int main(int argc, char *argv[])
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━*/
 void Algo_10_40(int a[], int len1, int len2)	
 {
+    printf("Algo_10_40: start:%d len1:%d len2:%d\n",a-g_start+1,len1,len2);
+
 	int i, j, k;
-	
+	int total_len=len1+len2;
 	if(len1>len2)						//使小序列保持在a的前端
-		Algo_5_18(a, a[0], len2);		//将len1段和len2段交换位置
+		Algo_5_18(a, total_len, len2);		//将len1段和len2段交换位置
 	
 	
 	i=1, j=len1+1, k=0;					//len1^2<len1+len2
 	
-	while(i<j&&j<=a[0])					
+	while(i<j&&j<=total_len)
 	{
 		while(a[i]<=a[j]&&i<j)			//跳过不需重排的序列 
 			i++;
 		
-		while(i<j&&a[i]>a[j]&&j<=a[0])	//j不能越界 
+		while(i<j&&a[i]>a[j]&&j<=total_len)	//j不能越界
 			k++, j++;
-		
+
+        //已有序
+        if(j==i)
+        {
+            break;
+        }
 		Algo_5_18(&a[i], j-i, k); 
 		
 		i=i+k+1, k=0;
 	}
+
+    //Print_10_40(a, len1+len2);
 }
 
 void Algo_5_18(int a[], int n, int k)
